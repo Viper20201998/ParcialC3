@@ -7,14 +7,14 @@ Paso 2: cd ParcialC3/
 
 Paso 3: docker-compose up
 
-Paso 4: sudo docker-compose run parcial_app python locallibrary/manage.py migrate
+Paso 4: sudo docker-compose run parcial_app python locallibrary/manage.py makemigrations
 
-Paso 5: sudo docker-compose run parcial_app python locallibrary/manage.py makemigrations
+Paso 5: sudo docker-compose run parcial_app python locallibrary/manage.py migrate
 
 Paso 6: sudo docker-compose run parcial_app python locallibrary/manage.py createsuperuser
-Ingresar un nombre de usuario
-Ingresar un correo electronico
-Ingresar la contraseña que desee
+"Ingresar un nombre de usuario"
+"Ingresar un correo electronico"
+"Ingresar la contraseña que desee"
 
 Paso 7: sudo docker-compose run parcial_app python locallibrary/manage.py collectstatic
 
