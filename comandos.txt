@@ -1,0 +1,34 @@
+
+import nltk
+from bs4 import BeautifulSoup
+import urllib.request
+response = urllib.request.urlopen('')
+html = response.read()
+soup = BeautifulSoup(html, "html5lib")
+text = soup.get_text(strip=True)
+
+
+tokens = [t for t in text.split()]
+
+clean_tokens = tokens[:]
+
+frecuencia = nltk.FreqDist(tokens)
+
+for key,val in frecuencia.items():
+	print(str(key) + ':' + str(val))
+
+
+frecuencia.plot(20, cumulative=False)
+
+from nltk.corpus import stopwords
+stopwords.words('english')
+
+for token in tokens:
+	if token in stopwords.words('english'):
+		clean_tokens.remove(token)
+
+frecuencia = nltk.FreqDist(clean_tokens)
+
+from nltk.tokenize import sent_tokenize
+
+print(sent_tokenize(text))
